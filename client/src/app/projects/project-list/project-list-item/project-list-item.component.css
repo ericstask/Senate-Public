@@ -1,0 +1,46 @@
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card {
+  border: 1px solid #1c2331;
+  border-radius: 5px;
+  padding: 10px;
+
+  background-color: #225378;
+  color: white;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: white;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: black;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-footer {
+  background-color: white;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  color: black;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

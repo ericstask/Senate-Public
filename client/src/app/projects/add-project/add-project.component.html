@@ -1,0 +1,41 @@
+<form [formGroup]="projectForm">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      placeholder="Enter a title for your project"
+      formControlName="title"
+      autocomplete="off">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      placeholder="Enter a short description of the project"
+      formControlName="description"
+      autocomplete="off">
+  </div>
+  <div class="mb-3">
+    <label for="content">Content</label>
+    <tinymce
+      #myEditor
+      formControlName="content"
+      id="content"
+      [config]="{
+        plugins: 'table lists fullscreen',
+        menubar: false,
+        statusbar: false,
+        toolbar: 'undo redo | bold italic underline | subscript superscript | forecolor | alignleft aligncenter alignright | bullist numlist outdent indent | table | blocks | fullscreen',
+        block_formats: 'Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3',
+      }"></tinymce>
+  </div>
+
+  <div class="btn-group d-flex justify-content-center" style="margin-top: 8px;">
+    <button class="button-primary" type="button" (click)="submitForm()">Save</button>
+    <button class="button-caution" type="button" routerLink="/development">Cancel</button>
+  </div>
+</form>

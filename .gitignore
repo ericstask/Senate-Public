@@ -1,0 +1,10 @@
+data/
+client/src/assets/tinymce/
+/server/node_modules
+/server/config.env
+/server/**/*.log
+.idea/
+
+**/dist/
+**/build/
+**/coverage/

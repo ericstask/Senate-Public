@@ -1,0 +1,18 @@
+<div class="card" style="margin-top: 10px;" >
+  <div class="card-header">
+    <h5>Tabletop Wargame</h5>
+    <h6>{{ createdDate | date: "mediumDate" }}</h6>
+  </div>
+  <div class="card-content" [routerLink]="['/development/project-detail', projectID]">
+    <h3>{{ projectTitle }}</h3>
+    <p>{{projectDescription}}</p>
+  </div>
+  <div class="card-footer">
+    <div class="button-group">
+      <button class="button-primary" type="button"
+              [routerLink]="['/development/project-detail', projectID]">View Project</button>
+      <button class="button-secondary" type="button">Add to Watchlist</button>
+      <button class="button-caution" type="button" (click)="deleteProject()">Delete Project</button>
+    </div>
+  </div>
+</div>

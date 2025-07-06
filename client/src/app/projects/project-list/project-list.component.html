@@ -1,0 +1,45 @@
+<div class="frame">
+
+  <div class="section-tools">
+    <a class="button-primary" routerLink="/development/add-project" type="button">Add Project</a>
+
+    <!-- Search Bar  -->
+    <div class="search-container">
+      <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" (keyup.enter)="search()">
+      <button type="button" *ngIf="searchQuery" (click)="clearSearch()"><i class="fa fa-times-circle"></i></button>
+      <button type="submit" *ngIf="searchQuery" (click)="search()"><i class="fa fa-search"></i></button>
+    </div>
+
+    <!-- Sorting  -->
+    <div class="sort-container">
+      <label for="sort">Sort by:</label>
+      <select id="sort" name="sort" (change)="sortList($event)">
+        <option value="name-asc">Title (A-Z)</option>
+        <option value="name-desc">Title (Z-A)</option>
+        <option value="date-asc">Date (Oldest to Newest)</option>
+        <option value="date-desc" selected>Date (Newest to Oldest)</option>
+      </select>
+    </div>
+  </div>
+
+  <h3 *ngIf="!projects || projects.length === 0; else showProjects" style="margin-top: 40px;">No results</h3>
+  <ng-template #showProjects>
+    <app-project-list-item
+      *ngFor="let project of projects; let i = index"
+      [projectTitle]="project.title"
+      [projectDescription]="project.description"
+      [projectID]="project._id"
+      [createdDate]="project.createdAt"></app-project-list-item>
+  </ng-template>
+
+  <!-- Pagination  -->
+  <div class="pagination" >
+    <a (click)="goToPage(1)" *ngIf="currentPage > 2">First</a>
+    <a (click)="goToPage(currentPage - 1)" *ngIf="currentPage > 1">&nbsp;&laquo;&nbsp;</a>
+    <ng-container *ngFor="let page of pages">
+      <a (click)="goToPage(page)" [class.active]="page === currentPage">{{ page }}</a>
+    </ng-container>
+    <a (click)="goToPage(currentPage + 1)" *ngIf="currentPage < totalPages">&nbsp;&raquo;&nbsp;</a>
+    <a (click)="goToPage(totalPages)" *ngIf="currentPage < totalPages - 1">Last</a>
+  </div>
+</div>

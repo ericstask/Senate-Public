@@ -1,0 +1,14 @@
+.frame {
+  width: 100%;
+  padding: 5rem;
+  margin-top: 5rem;
+  background-color: #225378;
+  border-radius: 10px;
+}
+
+.inner-frame {
+  padding: 5rem;
+  margin-top: 5rem;
+  border-radius: 10px;
+  background-color: white;
+}

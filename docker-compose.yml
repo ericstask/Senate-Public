@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+ client:
+   build: ./client
+   volumes:
+     - ./client:/home/app
+     - /home/app/node_modules
+   ports:
+     - "4200:4200"
+     
+ server:
+   build: ./server
+   volumes:
+     - ./server:/home/app
+     - /home/app/node_modules
+   ports:
+     - "8080:8080"
+   env_file:
+     - ./server/config.example.env
+   depends_on:
+     - database
+     
+ database:
+   image: mongo:6.0
+   volumes:
+     - "./data:/data/db"
+   ports:
+     - "27017:27017"

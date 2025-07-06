@@ -1,0 +1,80 @@
+/* BADGES */
+.link-with-badge {
+  position: relative !important;
+}
+
+.badge {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  background-color: #f00 !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  line-height: 20px !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: -10px !important;
+}
+
+/* BUTTONS */
+.button-primary {
+  display: inline-block !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+  border: 5px solid #225378 !important;
+  background: none !important;
+  color: #225378 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.button-primary:hover {
+  background-color: #225378 !important;
+  color: white !important;
+}
+
+.button-secondary {
+  display: inline-block !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+  border: 5px solid #1695A3 !important;
+  background: none !important;
+  color: #1695A3 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.button-secondary:hover {
+  background-color: #1695A3 !important;
+  color: white !important;
+}
+
+.button-caution {
+  display: inline-block !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+  border: 5px solid #EB7F00 !important;
+  background: none !important;
+  color: #EB7F00 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.button-caution:hover {
+  background-color: #EB7F00 !important;
+  color: white !important;
+}
